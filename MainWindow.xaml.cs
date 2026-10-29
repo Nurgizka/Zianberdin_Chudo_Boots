@@ -27,7 +27,7 @@ namespace Zianberdin_Chudo_Boots
             Manager.MainFrame = MainFrame;
         }
 
-        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        private void BtnLogout_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.GoBack();
         }
@@ -35,9 +35,9 @@ namespace Zianberdin_Chudo_Boots
         private void MainFrame_ContentRendered(object sender, EventArgs e)
         {
             if (MainFrame.CanGoBack)
-                BtnBack.Visibility = Visibility.Visible;
+                BtnLogout.Visibility = Visibility.Visible;
             else
-                BtnBack.Visibility = Visibility.Hidden;
+                BtnLogout.Visibility = Visibility.Hidden;
         }
     }
 }

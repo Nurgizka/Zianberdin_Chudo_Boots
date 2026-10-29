@@ -31,7 +31,7 @@ namespace Zianberdin_Chudo_Boots
 
             if (user == null)
             {
-                MessageBox.Show("Пользователь не найден");
+                MessageBox.Show("Пользователь не найден или введено пустое поле. Введите нормально");
                 return;
             }
 

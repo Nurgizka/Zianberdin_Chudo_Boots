@@ -30,6 +30,30 @@ namespace Zianberdin_Chudo_Boots
         public decimal ProductCost { get; set; }
         public int ID_Category { get; set; }
         public string ProductImage { get; set; }
+        public string QuantityString
+        {
+            get
+            {
+                int totalQty = StockItems.Sum(si => si.Amount);
+                return totalQty > 5 ? "много" : "мало";
+            }
+        }
+
+        public decimal FinalPrice
+        {
+            get
+            {
+                var lastMonth = DateTime.Now.AddMonths(-1);
+                bool hasOrders = OrderProducts.Any(op => op.Orders.OrderDate.Month == lastMonth.Month &&
+                                                          op.Orders.OrderDate.Year == lastMonth.Year);
+
+                if (!hasOrders)
+                    return ProductCost * 0.75m;
+
+                return ProductCost;
+            }
+        }
+
         public string ImagePath { get { return "/Image/" + ProductImage; } }
 
         public string CategorY
@@ -63,7 +87,7 @@ namespace Zianberdin_Chudo_Boots
                         .Select(si => si.Sizes.Size)
                         .Distinct()
                         .OrderBy(s => s)
-                        .Select(s => s.ToString("0.#")));  // 36 / 36.5 — без лишних нулей
+                        .Select(s => s.ToString("0.#")));
             }
         }
 

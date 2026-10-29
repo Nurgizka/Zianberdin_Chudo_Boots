@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zianberdin_Chudo_Boots"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" FontFamily="Calibri"  Icon="rec/ЧудоОбувь.ico" Background="#D2F6E7">
+        Title="MainWindow" Height="450" Width="1000" FontFamily="Calibri"  Icon="rec/ЧудоОбувь.ico" Background="#D2F6E7">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
@@ -15,9 +15,6 @@
         <TextBlock Text="Чудо Обувь" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"></TextBlock>
         <Image Source="/rec/ЧудоОбувь.png" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"/>
         <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"></Frame>
-        <Button Content="Назад" Name="BtnBack" Click="BtnBack_Click" HorizontalAlignment="Right" Margin="20"></Button>
-        <Button Content="Выйти" Click="BtnLogout_Click"
-        Width="80" Height="30" Margin="10"
-        HorizontalAlignment="Right"/>
+        <Button Content="Выйти" Name="BtnLogout" Click="BtnLogout_Click" Width="80" Height="30" Margin="10" HorizontalAlignment="Right"/>
     </Grid>
 </Window>
